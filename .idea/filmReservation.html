@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserver film</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="forside.html">Hjem</a></li>
+            <li><a href="film.html">Film</a></li>
+            <li><a href="billetter.html">Billetter</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="left">
+        <h1 id="titel">Filmtitel</h1>
+        <h3 id="genre" style="font-style: italic"></h3>
+        <h5 id="language"></h5>
+        <h6 id="runtime"></h6>
+        <img id="billede" src="forside.html">
+        <article id="beskrivelse"></article>
+    </div>
+
+    <div class="right">
+        <table class="table" id="tblShowings">
+
+            <!-- the header with date -->
+            <thead>
+            <tr id="dateRow">
+            </tr>
+            </thead>
+
+            <!-- The body with screen + time -->
+            <tbody>
+            <tr id="showingRow">
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<script src="js/filmReservation.js"></script>
+</body>
+</html>
