@@ -19,7 +19,6 @@ function showFilmInfo() {
 }
  */
 
-
 async function handleFormSubmit(event){
     event.preventDefault()
 
