@@ -10,7 +10,22 @@ header {
     background-color: #5F1A1F;
     padding: 40px;
     text-align: center;
-    margin-bottom: 70px; /* marghin bottom til luft for header */
+    margin-bottom: 40px; /* marghin bottom til luft for header */
+}
+
+h1 {
+    text-decoration: none;
+    color: white;
+    font-size: 38px;
+    padding: 0px 2px;
+    margin: 0;
+}
+
+h3, h5, h6 {
+    text-decoration: none;
+    color: white;
+    padding: 2px 2px;
+    margin: 0;
 }
 
 nav ul {
@@ -78,5 +93,44 @@ button {
 
 button:hover {
     background-color: red;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.left, .right {
+    flex: 1;
+}
+
+.left img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+}
+
+.left article {
+    text-align: left;
+    max-width: 52%;
+    margin-top: 10px;
+    color: white;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 320px;
+}
+
+th, td {
+    border: 2px solid #ffffff;
+    padding: 10px;
+    text-align: left;
+    color: white;
 }
 

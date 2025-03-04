@@ -36,7 +36,8 @@ function addFilmToFrontpage(film){
     filmDiv.appendChild(button);
 
     button.onclick = function() {
-        window.location.href = "forside.html"
+        localStorage.setItem("film", JSON.stringify(film)); // converts film object to JSON - later we convert the JSON back to an object
+        window.location.href = "filmReservation.html"
     };
 
     filmList.appendChild(filmDiv);
