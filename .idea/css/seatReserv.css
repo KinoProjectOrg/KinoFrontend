@@ -1,0 +1,62 @@
+/* Seat Limit Input Styling */
+#seatLimitContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#seatLimit {
+    margin-top: 5px;
+    width: 172px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Seat Container */
+#seatContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between rows */
+    align-items: center; /* Center the seat grid */
+}
+
+/* Row Styling */
+.row {
+    display: flex;
+    gap: 5px; /* Space between seats */
+}
+
+/* Seat Styling */
+.seat {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Reserved Seat */
+.seat.reserved {
+    background-color: red;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* Available Seat */
+.seat.available {
+    background-color: green;
+    color: white;
+}
+
+/* Selected Seat */
+.seat.selected {
+    background-color: blue;
+    color: white;
+}
