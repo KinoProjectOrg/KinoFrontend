@@ -1,7 +1,7 @@
 //import function that returns show data
 
 // const showInfo = function that returns show data
-
+const showInfo = 1
 // map for all seats, the seats that are reserved and a set for those that will be selected
 let mapSeats = new Map();
 let mapReserved = new Map();
@@ -19,16 +19,17 @@ const seatInput = document.querySelector("#seatLimit")
 //Method to get the reservation, to find reserved seats.
 async function getReservedSeats(){
     try {
-        const url = "http://localhost:8080/reservation/" + showInfo.showId
+        const url = "http://localhost:8080/reservation/" + showInfo
         const response = await fetch(url)
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         console.log(response)
         const result = await response.json()
         console.log(result)
 
-        result.forEach(reservation => {
-            reservation.seatList.forEach(seat => {
-                mapReserved.set(seat.seatId, reservation)
-            })
+        result.forEach(seat => {
+                mapReserved.set(seat.seatId, seat)
         })
     }
     catch(error){
@@ -38,9 +39,12 @@ async function getReservedSeats(){
 
 async function loadAllSeats(){
     try {
-        const url = "http://localhost:8080/seats/" + showInfo.showId
+        const url = "http://localhost:8080/reservation/seatsInShow/" + 1
         const response = await fetch(url)
         console.log(response)
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const result = await response.json()
         console.log(result)
 
@@ -54,7 +58,7 @@ async function loadAllSeats(){
 }
 
 function creatingSeats(){
-    const seatsPerRow = showinfo.sceen.seats
+    const seatsPerRow = 10;
 
     let currentRow;
     let seatIndex = 0;
@@ -110,7 +114,7 @@ function creatingSeats(){
 }
 
 seatInput.addEventListener("input", () => {
-    let value = parseInt(seatLimitInput.value, 10); // Get the current input value
+    let value = parseInt(seatInput.value); // Get the current input value
 
     // Validate the value
     if (value < 1) {
