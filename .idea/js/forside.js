@@ -1,8 +1,7 @@
 console.log("jeg er i forsiden")
 
 const filmList = document.getElementById("filmList");
-const filmUrl = "https://gist.githubusercontent.com/saniyusuf/406b843afdfb9c6a86e25753fe2761f4/raw/523c324c7fcc36efab8224f9ebb7556c09b69a14/Film.JSON";
-const picTest = "https://images-na.ssl-images-amazon.com/images/M/MV5BMjQyMzI2OTA3OF5BMl5BanBnXkFtZTgwNDg5NjQ0OTE@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+const filmUrl = "http://localhost:8080/movies/get";
 
 // fetch function to fetch films
 function fetchAnyUrl(url){
@@ -17,17 +16,15 @@ function addFilmToFrontpage(film){
     // adds a titel
     const titel = document.createElement("h3")
     //titel.innerHTML = film.titel;
-    titel.innerHTML = film.Title;
+    titel.innerHTML = film.title;
     filmDiv.appendChild(titel);
 
     // adss a picture based on link
     const picture = document.createElement("img");
-    // picture.setAttribute("src", film.hrefPhoto)
-    // picture.setAttribute("src", film.Poster)
-    picture.setAttribute("src", picTest)
+    picture.setAttribute("src", film.poster_path)
     picture.setAttribute("alt", "x")
     picture.setAttribute("width", 150)
-    picture.setAttribute("height", 150)
+    picture.setAttribute("height", 180)
     filmDiv.appendChild(picture);
 
     // adds a book ticket button
