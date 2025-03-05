@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/styleReservation.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="forside.html">Hjem</a></li>
+            <li><a href="filmReservation.html">Film</a></li>
+            <li><a href="billetter.html">Billetter</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="left">
+        <h1 id="titel2">Filmtitel</h1>
+        <img id="billede2" src="forside.html">
+    </div>
+
+    <div class="right"> <form action="http://localhost:8080/create" method="post" id="formKommune">
+        <div class="form-group">
+            <label for="inpCode">Navn</label>
+            <input
+                    type="text"
+                    name="Navn"
+                    class="inputfield"
+                    id="inpNavn" required >
+        </div>
+
+        <div class="form-group">
+            <label class="form-lab" for="inpName">E-mail</label>
+            <input
+                    type="text"
+                    name="E-mail"
+                    class="inputfield"
+                    id="inpMail" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-lab" for="inpHref">Mobil</label>
+            <input
+                    type="text"
+                    name="Mobil"
+                    class="inputfield"
+                    id="inpMobil" required>
+        </div>
+
+        <button type=submit title="Gem" id="submit">Reserver</button>
+        <!--<button type="submit" class="form-el">Opret</button>-->
+    </form>
+    </div>
+</div>
+<script src="js/filmBekræftelse.js"></script>
+</body>
+</html>

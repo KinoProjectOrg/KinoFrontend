@@ -21,13 +21,6 @@ h1 {
     margin: 0;
 }
 
-h3, h5, h6 {
-    text-decoration: none;
-    color: white;
-    padding: 2px 2px;
-    margin: 0;
-}
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -54,43 +47,6 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-#filmList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Afstand mellem filmene */
-    justify-content: center; /* Centrerer filmene */
-}
-
-.film-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 250px; /* Fast bredde */
-    text-align: center;
-    background-color: #1c1c1c;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-}
-
-.film-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-button {
-    background-color: darkred;
-    color: white;
-    border: none;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
 button:hover {
     background-color: red;
 }
@@ -113,23 +69,45 @@ button:hover {
     display: block;
 }
 
-.left article {
-    text-align: left;
-    max-width: 52%;
-    margin-top: 10px;
-    color: white;
-
+.right {
+    margin-top: 100px;
 }
 
-table {
+.left{
+    margin-bottom: 200px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    color: white;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+.inputfield {
+    margin-top: 20px;
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 320px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-th, td {
-    border: 2px solid #ffffff;
-    padding: 10px;
-    text-align: left;
+#submit {
+    background-color: darkred;
     color: white;
+    border: none;
+    padding: 10px;
+    width: 90px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.inputfelter{
+    margin-top: 100px;
 }
