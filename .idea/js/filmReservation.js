@@ -43,7 +43,7 @@ function addShowingToTable(showings) {
 
     });
 }
-
+// test
 /*
 // Eksempeldata
 let showings = [
