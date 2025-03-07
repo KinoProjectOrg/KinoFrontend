@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seat Reservation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/seatReserv.css"></link>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="forside.html">Hjem</a></li>
+            <li><a href="film.html">Film</a></li>
+            <li><a href="billetter.html">Billetter</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <div>
+        <div id="seatLimitContainer">
+            <label for="seatLimit">Select number of seats </label>
+            <input type="number" id="seatLimit" min="1" value="1" max="10"/>
+        </div>
+
+        <div id="screenInReservation">
+            <h1>Screen</h1>
+        </div>
+
+        <div id="seatContainer">
+
+        </div>
+
+    </div>
+    <div id="reserve-button">
+        <button type="button" id="reserveButton">Reserved Selected Seats</button>
+    </div>
+<script src="js/seatReservation.js"></script>
+</body>
+</html>

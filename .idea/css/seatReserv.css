@@ -1,0 +1,117 @@
+/* Seat Limit Input Styling */
+#seatLimitContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#seatLimit {
+    margin-top: 5px;
+    width: 172px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Seat Container */
+#seatContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between rows */
+    align-items: center; /* Center the seat grid */
+}
+
+/* Row Container Styling */
+.row-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Row Number Styling */
+.row-number {
+    width: 30px;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+}
+
+/* Row Styling */
+.row {
+    display: flex;
+    gap: 5px; /* Space between seats */
+}
+
+/* Seat Styling */
+.seat {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Reserved Seat */
+.seat.reserved {
+    background-color: red;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* Available Seat */
+.seat.available {
+    background-color: green;
+    color: white;
+}
+
+/* Selected Seat */
+.seat.selected {
+    background-color: blue;
+    color: white;
+}
+
+#screenInReservation {
+    width: 60%; /* Adjust width to make it a long box */
+    margin: 0 auto; /* Center the screen horizontally */
+    padding: 10px; /* Add some padding inside the box */
+    background-color: #d3d3d3; /* Light gray color */
+    color: black; /* Text color */
+    text-align: center; /* Center the text inside the box */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    margin-bottom: 20px; /* Add space below the screen */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a 3D effect */
+}
+
+/* Reserve Button Container */
+#reserve-button {
+    display: flex;
+    justify-content: flex-end; /* Position button at right */
+    margin-top: 20px;
+    padding-right: 20px; /* Add some padding from the right edge */
+}
+
+/* Button Styling */
+#reserveButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#reserveButton:hover {
+    background-color: #45a049;
+}
