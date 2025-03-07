@@ -31,8 +31,8 @@
 
 /* Seat Styling */
 .seat {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,4 +59,17 @@
 .seat.selected {
     background-color: blue;
     color: white;
+}
+#screenInReservation {
+    width: 80%; /* Adjust width to make it a long box */
+    margin: 0 auto; /* Center the screen horizontally */
+    padding: 10px; /* Add some padding inside the box */
+    background-color: #d3d3d3; /* Light gray color */
+    color: black; /* Text color */
+    text-align: center; /* Center the text inside the box */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    margin-bottom: 20px; /* Add space below the screen */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a 3D effect */
 }

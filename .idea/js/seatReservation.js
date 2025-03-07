@@ -74,7 +74,7 @@ function creatingSeats(){
         const seatElement = document.createElement('div');
         seatElement.classList.add('seat'); // Add a class for styling seats
         seatElement.setAttribute("data-seat-id",seatId) //add the seat id to specific seat so its easier to get later
-        seatElement.innerHTML = seat.seatNo; // Display the seat ID (or any other info)
+        seatElement.innerHTML = seat.seatNo; // show the seat number on the seat
 
         // Check if the seat is reserved
         if (mapReserved.has(seatId)) {
@@ -123,9 +123,13 @@ seatInput.addEventListener("input", () => {
         seatInput.value = 10; // Reset to the maximum value
     }
 });
-// Made a function that can transfer the data to another javascript file.
-function getSelectedSeats(){
-    return Array.from(selectedSeats)
-}
 
-window.getSelectedSeats = getReservedSeats;
+const reserveButton = document.getElementById("reserveButton");
+reserveButton.addEventListener("click", () => {
+
+    // should store the selected seats so it can be accesed in the reservation html.
+    sessionStorage.setItem('selectedSeats', JSON.stringify(Array.from(selectedSeats)));
+
+    window.location.href = "Html name for place to go";
+})
+
