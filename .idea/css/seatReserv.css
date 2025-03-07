@@ -23,6 +23,24 @@
     align-items: center; /* Center the seat grid */
 }
 
+/* Row Container Styling */
+.row-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Row Number Styling */
+.row-number {
+    width: 30px;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+}
+
 /* Row Styling */
 .row {
     display: flex;
@@ -31,8 +49,8 @@
 
 /* Seat Styling */
 .seat {
-    width: 40px;
-    height: 30px;
+    width: 30px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,8 +78,9 @@
     background-color: blue;
     color: white;
 }
+
 #screenInReservation {
-    width: 80%; /* Adjust width to make it a long box */
+    width: 60%; /* Adjust width to make it a long box */
     margin: 0 auto; /* Center the screen horizontally */
     padding: 10px; /* Add some padding inside the box */
     background-color: #d3d3d3; /* Light gray color */
@@ -72,4 +91,27 @@
     font-weight: bold; /* Make the text bold */
     margin-bottom: 20px; /* Add space below the screen */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a 3D effect */
+}
+
+/* Reserve Button Container */
+#reserve-button {
+    display: flex;
+    justify-content: flex-end; /* Position button at right */
+    margin-top: 20px;
+    padding-right: 20px; /* Add some padding from the right edge */
+}
+
+/* Button Styling */
+#reserveButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#reserveButton:hover {
+    background-color: #45a049;
 }

@@ -1,7 +1,7 @@
 //import function that returns show data
 
 // const showInfo = function that returns show data
-const showInfo = 1
+const showInfo = 2
 // map for all seats, the seats that are reserved and a set for those that will be selected
 let mapSeats = new Map();
 let mapReserved = new Map();
@@ -39,7 +39,7 @@ async function getReservedSeats(){
 
 async function loadAllSeats(){
     try {
-        const url = "http://localhost:8080/reservation/seatsInShow/" + 1
+        const url = "http://localhost:8080/reservation/seatsInShow/" + showInfo
         const response = await fetch(url)
         console.log(response)
         if (!response.ok) {
@@ -58,16 +58,29 @@ async function loadAllSeats(){
 }
 
 function creatingSeats(){
-    const seatsPerRow = 10;
+    const seatsPerRow = 16;
 
     let currentRow;
     let seatIndex = 0;
+    let rowNumber = 1;
     mapSeats.forEach((seat, seatId) => {
         //if statment should only create a new row in begninning og when seatIndex hits the seatsPerRow number.
         if (seatIndex % seatsPerRow === 0) {
+
+            const rowContainer = document.createElement('div');
+            rowContainer.classList.add('row-container');
+
+            // Add row number
+            const rowLabel = document.createElement('div');
+            rowLabel.textContent = rowNumber++;
+            rowLabel.classList.add('row-number');
+            rowContainer.appendChild(rowLabel);
+
             currentRow = document.createElement('div');
             currentRow.classList.add('row'); // Add a class for styling rows
-            seatContainer.appendChild(currentRow); // Append the new row to the container
+            rowContainer.appendChild(currentRow); // Append the new row to the container
+
+            seatContainer.appendChild(rowContainer)
         }
 
         //making the seats
