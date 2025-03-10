@@ -35,7 +35,8 @@ async function handleFormSubmit(event){
         const reservationObject = new FormData(form); // we get a object from the form
         console.log(reservationObject);
         const responseData = await postFormData(url, reservationObject); // sends the form data as JSON and returns a JS object
-        window.location.href = "forside.html"; // if succes... return this
+        sessionStorage.setItem("customer", JSON.stringify(responseData));
+        window.location.href = "filmBestilling.html"; // if succes... return this
     } catch (error) {
         alert(error.message);
         console.error(error);
