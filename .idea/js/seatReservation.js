@@ -146,6 +146,6 @@ reserveButton.addEventListener("click", () => {
     // should store the selected seats so it can be accesed in the reservation html.
     sessionStorage.setItem('selectedSeats', JSON.stringify(Array.from(selectedSeats)));
 
-    window.location.href = "Html name for place to go";
+    window.location.href = "filmBekræftelse.html";
 })
 

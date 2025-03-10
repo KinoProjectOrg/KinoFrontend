@@ -38,6 +38,9 @@ function addFilmToFrontpage(film){
     };
 
     filmList.appendChild(filmDiv);
+
+    sessionStorage.setItem("chosenFilm", JSON.stringify(film));
+
 }
 
 let film = [] // film as an array

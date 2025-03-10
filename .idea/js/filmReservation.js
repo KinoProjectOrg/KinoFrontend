@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     await addShowingToTable(showings);
 });
 
+
 function showFilmInfo(){
     filmData = JSON.parse(localStorage.getItem("film")); // parses the JSON to a javaScript object
 
