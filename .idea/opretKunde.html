@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opret Ny Bruger</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<header>
+  <h1>Opret en ny bruger</h1>
+</header>
+
+
+  <div class="right">
+    <article>
+      <h3>Opret bruger</h3>
+      <form id="registerForm" onsubmit="return handleRegister(event)">
+        <label for="newUsername">Brugernavn:</label>
+        <input type="text" id="newUsername" name="username" required>
+
+        <label for="newPassword">Adgangskode:</label>
+        <input type="password" id="newPassword" name="password" required>
+
+        <button type="submit">Opret bruger</button>
+      </form>
+    </article>
+  </div>
+</div>
+
+
+<script src="js/opret.js"></script>
+</body>
+</html>
