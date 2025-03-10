@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 function showFilmInfo() {
-    filmData = JSON.parse(sessionStorage.getItem("chosenFilm")); // parses the JSON to a javaScript object
+    filmData = JSON.parse(localStorage.getItem("film"));
     seatData = JSON.parse(sessionStorage.getItem("selectedSeats"));
     console.log(seatData);
 
@@ -37,6 +37,7 @@ async function handleFormSubmit(event){
         const responseData = await postFormData(url, reservationObject); // sends the form data as JSON and returns a JS object
         sessionStorage.setItem("customer", JSON.stringify(responseData));
         window.location.href = "filmBestilling.html"; // if succes... return this
+
     } catch (error) {
         alert(error.message);
         console.error(error);

@@ -10,19 +10,20 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 function showFilmInfo() {
-    filmData = JSON.parse(sessionStorage.getItem("chosenFilm"));// parses the JSON to a javaScript object
+    filmData = JSON.parse(localStorage.getItem("film")); // parses the JSON to a javaScript object
     console.log(filmData);
+
     seatData = JSON.parse(sessionStorage.getItem("selectedSeats"));
     console.log(seatData);
+
     showingData = JSON.parse(localStorage.getItem("showingItem"));
     console.log(showingData);
-    customer1 = JSON.parse(sessionStorage.getItem("customer"))
-    console.log(customer1);
 
     document.getElementById("titel").innerText = filmData.title; // gets the title from the html and sets it to the name of the movie
     document.getElementById("billede").src = filmData.poster_path;
     document.getElementById("dato").innerText = showingData.date + ' - kl ' + showingData.startTime ;
     document.getElementById("sal").innerText = 'Sal - ' + showingData.screenModel.screenNumber;
+
     let numberOfTickets = seatData.length;
     let price = calculateCost(numberOfTickets)
     if(numberOfTickets > 1){
@@ -37,15 +38,12 @@ function calculateCost(tickets){
 
 async function postReservation() {
     let customer = JSON.parse(sessionStorage.getItem("customer"))
-    let seats = JSON.parse(sessionStorage.getItem("selectedSeats"))
-   // const seatIds = seats.map(seat => seat.seatId);
 
     const url = "http://localhost:8080/reservation/create"
 
     let reservationObject = {
-        customer_id: customer.customerId,
-        showing_id: showingData.showingId,
-        seatIds: seats
+        customerId: customer.customerId,
+        showingId: showingData.showingId
     };
 
     console.log(reservationObject);
@@ -63,18 +61,46 @@ async function postReservation() {
             throw new Error(`HTTP-fejl - Status: ${response.status}`);
             console.log(formDataObject);
         }
-        const responseData = await response.json(); // returns the response as a JS object
+        const reservation = await response.json(); // returns the response as a JS object
 
         console.log("Reservation oprettet:", responseData);
+
+        await postSeatsToReservation(reservation.reservationId) // adds the seats to the reservation
 
         window.location.href = "forside.html";
 
     }catch(error){
         console.log("Kunne ikke fetche", error)
     }
+}
 
+async function postSeatsToReservation(reservationId){
+    const url = `http://localhost:8080/reservation/addSeats/${reservationId}`
 
+    let seats = JSON.parse(sessionStorage.getItem("selectedSeats"))
+    const seatIds = seats.map(seat => seat.seatId); // find the id for every seat
 
+    try{
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(seatIds)
+
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP-fejl - Status: ${response.status}`);
+        }
+
+        const responseData = await response.json(); // returns the response as a JS object
+
+        console.log("Sæder tilføjet til reservation:", responseData);
+
+    }catch(error){
+        console.log("Kunne ikke tilføje sæder til reservation")
+    }
 
 }
 
