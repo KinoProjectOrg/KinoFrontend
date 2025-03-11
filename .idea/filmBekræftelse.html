@@ -20,16 +20,16 @@
 <div class="container">
 
     <div class="left">
-        <h1 id="titel2">Filmtitel</h1>
-        <img id="billede2" src="forside.html">
+        <h1 id="titel">Filmtitel</h1>
+        <img id="billede" src="forside.html">
     </div>
 
-    <div class="right"> <form action="http://localhost:8080/create" method="post" id="formKommune">
+    <div class="right"> <form action="http://localhost:8080/customer/create" method="post" id="formReservation">
         <div class="form-group">
             <label for="inpCode">Navn</label>
             <input
                     type="text"
-                    name="Navn"
+                    name="name"
                     class="inputfield"
                     id="inpNavn" required >
         </div>
@@ -38,7 +38,7 @@
             <label class="form-lab" for="inpName">E-mail</label>
             <input
                     type="text"
-                    name="E-mail"
+                    name="email"
                     class="inputfield"
                     id="inpMail" required>
         </div>
@@ -47,7 +47,7 @@
             <label class="form-lab" for="inpHref">Mobil</label>
             <input
                     type="text"
-                    name="Mobil"
+                    name="phone"
                     class="inputfield"
                     id="inpMobil" required>
         </div>

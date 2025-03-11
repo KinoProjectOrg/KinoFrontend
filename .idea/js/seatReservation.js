@@ -19,7 +19,8 @@ const seatInput = document.querySelector("#seatLimit")
 //Method to get the reservation, to find reserved seats.
 async function getReservedSeats(){
     try {
-        const url = "http://localhost:8080/reservation/" + showInfo
+        let showing1 = JSON.parse(localStorage.getItem("showingItem"));
+        const url = "http://localhost:8080/reservation/" + showing1.showingId;
         const response = await fetch(url)
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -39,7 +40,9 @@ async function getReservedSeats(){
 
 async function loadAllSeats(){
     try {
-        const url = "http://localhost:8080/reservation/seatsInShow/" + showInfo
+        let showing2 = JSON.parse(localStorage.getItem("showingItem"));
+        const url = "http://localhost:8080/reservation/seatsInShow/" + showing2.showingId;
+        console.log(showing2);
         const response = await fetch(url)
         console.log(response)
         if (!response.ok) {
@@ -143,6 +146,6 @@ reserveButton.addEventListener("click", () => {
     // should store the selected seats so it can be accesed in the reservation html.
     sessionStorage.setItem('selectedSeats', JSON.stringify(Array.from(selectedSeats)));
 
-    window.location.href = "Html name for place to go";
+    window.location.href = "filmBekræftelse.html";
 })
 
