@@ -75,9 +75,8 @@ async function postReservation() {
         }
         const reservation = await response.json(); // returns the response as a JS object
 
-        console.log("Reservation oprettet:", responseData);
+        console.log("Reservation oprettet:", reservation);
 
-        await postSeatsToReservation(reservation.reservationId) // adds the seats to the reservation
 
         window.location.href = "forside.html";
 
