@@ -4,8 +4,8 @@ const urlEmp = "http://localhost:8080/employee/"
 // Function to enable edit mode for a row
 function enableEditMode(row, employee) {
     // Get the cells that contain data (name and role)
-    const nameCell = row.cells[0];
-    const roleCell = row.cells[1];
+    const nameCell = row.cells[1];
+    const roleCell = row.cells[2];
 
     // Store the current values
     const currentName = nameCell.textContent;
@@ -19,8 +19,8 @@ function enableEditMode(row, employee) {
 // Function to save changes and return to display mode
 async function saveChanges(row, employee) {
     // Get the input values
-    const nameInput = row.cells[0].querySelector('input').value;
-    const roleInput = row.cells[1].querySelector('input').value;
+    const nameInput = row.cells[1].querySelector('input').value;
+    const roleInput = row.cells[2].querySelector('input').value;
 
     // Update the employee object
     employee.name = nameInput;
@@ -32,28 +32,28 @@ async function saveChanges(row, employee) {
 
         if (response.ok) {
             // Update was successful, switch back to display mode
-            row.cells[0].innerHTML = nameInput;
-            row.cells[1].innerHTML = roleInput;
+            row.cells[1].innerHTML = nameInput;
+            row.cells[2].innerHTML = roleInput;
 
             // Update the delete and update buttons with the new name
-            const deleteBtn = row.cells[2].querySelector('input');
+            const deleteBtn = row.cells[3].querySelector('input');
             deleteBtn.value = `Slet ${nameInput}`;
 
-            const updateBtn = row.cells[3].querySelector('input');
+            const updateBtn = row.cells[4].querySelector('input');
             updateBtn.value = `Opdater ${nameInput}`;
 
             alert("Employee updated successfully!");
         } else {
             alert("Failed to update employee: " + response.status);
             // Revert to original values
-            row.cells[0].innerHTML = employee.name;
-            row.cells[1].innerHTML = employee.role;
+            row.cells[1].innerHTML = employee.name;
+            row.cells[2].innerHTML = employee.role;
         }
     } catch (error) {
         alert("Error updating employee: " + error.message);
         // Revert to original values
-        row.cells[0].innerHTML = employee.name;
-        row.cells[1].innerHTML = employee.role;
+        row.cells[1].innerHTML = employee.name;
+        row.cells[2].innerHTML = employee.role;
     }
 }
 async function updateEmployee(employee) {

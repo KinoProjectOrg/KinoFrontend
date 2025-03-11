@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/opretAnsatStyle.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Ansatte registrering</h1>
+  <div class="container">
+      <form action="http://localhost:8080/employee/create" method="post" id="formAnsat">
+        <div class="form-group">
+          <label for="name">Navn</label>
+          <input type="text" name="name" class="inputfield" id="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" class="inputfield" id="password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="role">Role</label>
+          <input type="text" name="role" class="inputfield" id="role" placeholder="ADMIN or FILM_OPERATOR" required>
+        </div>
+
+      <button type="submit" title="Gem">Opret</button>
+    </form>
+  </div>
+
+<script src="js/opretAnsat.js"></script>
+</body>
+</html>
