@@ -122,19 +122,14 @@ button:hover {
 }
 
 table {
-    width: 110%;
+    width: 100%;
     border-collapse: collapse;
-    margin-bottom: 50px;
+    margin-bottom: 320px;
 }
 
 th, td {
     border: 2px solid #ffffff;
-    padding: 25px;
+    padding: 10px;
     text-align: left;
     color: white;
-}
-
-th {
-    background-color: darkred;
-    font-size: small;
 }

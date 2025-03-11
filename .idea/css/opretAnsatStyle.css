@@ -1,0 +1,78 @@
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 38px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #5F1A1F; /* Using your header color */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.form-group {
+    margin-bottom: 22px;
+    position: relative;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: white;
+    font-size: 15px;
+}
+
+
+.inputfield {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    background-color: #1F222B;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.inputfield:focus {
+    border-color: darkred;
+    box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.3);
+    outline: none;
+}
+
+.inputfield::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Button styling */
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: darkred;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: red;
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
