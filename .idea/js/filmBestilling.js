@@ -37,22 +37,34 @@ function calculateCost(tickets){
 }
 
 async function postReservation() {
-    let customer = JSON.parse(sessionStorage.getItem("customer"))
+    customer = JSON.parse(sessionStorage.getItem("customer"))
+    console.log(customer)
+    showing = JSON.parse(localStorage.getItem("showingItem"));
+    seats = JSON.parse(sessionStorage.getItem("selectedSeats"));
+    // let seatsIder = JSON.stringify(seats);
 
     const url = "http://localhost:8080/reservation/create"
 
     let reservationObject = {
-        customerId: customer.customerId,
-        showingId: showingData.showingId
-    };
+        customer: {customerId: customer.customerId},  // Send som objekt
+        showing: {showingId: showing.showingId},      // Send som objekt
+        seatList: seats.map(seatId => ({seatId}))
+    }
 
+    /*
+    let reservationObject = {
+        customerId: customer.customerId,
+        showingId: showing.showingId,
+        SeatIds: seats
+    };
+*/
     console.log(reservationObject);
 
     try {
         const response = await fetch(url, {
             method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(reservationObject)
         });
