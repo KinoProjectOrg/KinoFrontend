@@ -26,32 +26,25 @@
 
     <div class="right"> <form action="http://localhost:8080/customer/create" method="post" id="formReservation">
         <div class="form-group">
-            <label for="inpCode">Navn</label>
+            <label for="inpUsername">Email (Username)</label>
             <input
-                    type="text"
-                    name="name"
+                    type="email"
+                    name="username"
                     class="inputfield"
-                    id="inpNavn" required >
+                    id="inpUsername"
+                    placeholder="example@email.com"
+                    required>
         </div>
 
         <div class="form-group">
-            <label class="form-lab" for="inpName">E-mail</label>
+            <label class="form-lab" for="inpPassword">Password</label>
             <input
-                    type="text"
-                    name="email"
+                    type="password"
+                    name="password"
                     class="inputfield"
-                    id="inpMail" required>
+                    id="inpPassword"
+                    required>
         </div>
-
-        <div class="form-group">
-            <label class="form-lab" for="inpHref">Mobil</label>
-            <input
-                    type="text"
-                    name="phone"
-                    class="inputfield"
-                    id="inpMobil" required>
-        </div>
-
         <button type=submit title="Gem" id="submit">Reserver</button>
         <!--<button type="submit" class="form-el">Opret</button>-->
     </form>
