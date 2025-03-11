@@ -1,0 +1,15 @@
+/* Add this to your existing CSS file */
+#employee_table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+#employee_table td {
+    vertical-align: middle;
+    padding: 8px;
+}
+
+
