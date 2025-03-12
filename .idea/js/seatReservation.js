@@ -146,6 +146,14 @@ reserveButton.addEventListener("click", () => {
     // should store the selected seats so it can be accesed in the reservation html.
     sessionStorage.setItem('selectedSeats', JSON.stringify(Array.from(selectedSeats)));
 
-    window.location.href = "filmBekræftelse.html";
+    let customer = JSON.parse(localStorage.getItem("customer"));
+    console.log(customer)
+    if(typeof customer === null) {
+        window.location.href = "filmBekræftelse.html";
+        console.log("bekræft")
+    } else{
+        window.location.href = "filmBestilling.html";
+        console.log("Bestil")
+    }
 })
 

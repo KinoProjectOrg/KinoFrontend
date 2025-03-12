@@ -1,5 +1,6 @@
 console.log("jeg er i confirm")
-
+console.log(JSON.parse(localStorage.getItem("customer")));
+console.log(localStorage.getItem("customer"));
 const rerserveButton = document.getElementById("submit");
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -35,7 +36,7 @@ async function handleFormSubmit(event){
         const reservationObject = new FormData(form); // we get a object from the form
         console.log(reservationObject);
         const responseData = await postFormData(url, reservationObject); // sends the form data as JSON and returns a JS object
-        sessionStorage.setItem("customer", JSON.stringify(responseData));
+        localStorage.setItem("customer", JSON.stringify(responseData));
         window.location.href = "filmBestilling.html"; // if succes... return this
 
     } catch (error) {

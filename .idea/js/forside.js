@@ -1,5 +1,5 @@
 console.log("jeg er i forsiden")
-
+console.log(JSON.parse(localStorage.getItem("customer")));
 const filmList = document.getElementById("filmList");
 const filmUrl = "http://localhost:8080/movies/get";
 

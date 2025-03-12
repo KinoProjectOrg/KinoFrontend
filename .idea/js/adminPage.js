@@ -46,7 +46,7 @@ function createEmployee(employee){
     let photoCell = row.insertCell(cellCount++);
     const photo = document.createElement("img");
     photo.src = employee.photoUrl || `./pictures/pic${pictureNum++}.jpg`
-    photo.alt = `${employee.name}'s photo`;
+    photo.alt = `${employee.username}'s photo`;
     photo.style.width = "80px"; // Set width
     photo.style.height = "80px"; // Set height
     photo.style.objectFit = "cover"; // Maintain aspect ratio
@@ -64,7 +64,7 @@ function createEmployee(employee){
     photoCell.appendChild(photo);
 
     let cell = row.insertCell(cellCount++);
-    cell.innerHTML = employee.name;
+    cell.innerHTML = employee.username;
 
     cell = row.insertCell(cellCount++);
     cell.innerHTML = employee.role;
@@ -72,7 +72,7 @@ function createEmployee(employee){
     cell = row.insertCell(cellCount++);
     const deleteEmp = document.createElement("input")
     deleteEmp.type = "button"
-    deleteEmp.setAttribute("value", `Slet ${employee.name}`);
+    deleteEmp.setAttribute("value", `Slet ${employee.username}`);
     deleteEmp.onclick = () => {
         row.remove()
         deleteEmployee(employee)
@@ -82,7 +82,7 @@ function createEmployee(employee){
     cell = row.insertCell(cellCount++);
     const updateEmp = document.createElement("input");
     updateEmp.type = "button";
-    updateEmp.setAttribute("value", `Opdater ${employee.name}`);
+    updateEmp.setAttribute("value", `Opdater ${employee.username}`);
     updateEmp.className = "update-btn";
 
     // Flag to track if we're in edit mode
@@ -97,7 +97,7 @@ function createEmployee(employee){
         } else {
             // Save changes and switch back to display mode
             saveChanges(row, employee);
-            updateEmp.value = `Opdater ${employee.name}`;
+            updateEmp.value = `Opdater ${employee.username}`;
             isEditing = false;
         }
     };

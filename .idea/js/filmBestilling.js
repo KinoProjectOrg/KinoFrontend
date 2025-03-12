@@ -1,4 +1,5 @@
 console.log("Jeg er i bestilling")
+console.log(JSON.parse(localStorage.getItem("customer")));
 
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM er indlæst");
@@ -37,7 +38,7 @@ function calculateCost(tickets){
 }
 
 async function postReservation() {
-    customer = JSON.parse(sessionStorage.getItem("customer"))
+    customer = JSON.parse(localStorage.getItem("customer"))
     console.log(customer)
     showing = JSON.parse(localStorage.getItem("showingItem"));
     seats = JSON.parse(sessionStorage.getItem("selectedSeats"));

@@ -9,6 +9,7 @@ function handleLogin(event) {
         password: password
     };
 
+    console.log(loginData)
     fetch('http://localhost:8080/login', {
         method: 'POST',
         headers: {
@@ -18,8 +19,16 @@ function handleLogin(event) {
     })
         .then(response => {
             if (response.ok) {
-                alert("Login successful!");
-                window.location.href = "forside.html"; // hvor skal vi hen??? mangler en side til en kunde
+                return response.json().then(data => {
+                    alert("Login successful!");
+                    console.log("Response data:", data);
+
+                    // Store the JSON data in localStorage
+                    localStorage.setItem("customer", JSON.stringify(data));
+                    console.log("Stored in localStorage:", localStorage.getItem("customer"));
+
+                    window.location.href = "forside.html";
+                });
             } else {
                 alert("Fejl ved login, prøv igen.");
             }
@@ -28,3 +37,4 @@ function handleLogin(event) {
             console.error("Error during login:", error);
         });
 }
+
