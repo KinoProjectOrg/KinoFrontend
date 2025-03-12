@@ -23,7 +23,7 @@ async function saveChanges(row, employee) {
     const roleInput = row.cells[2].querySelector('input').value;
 
     // Update the employee object
-    employee.name = nameInput;
+    employee.username = nameInput;
     employee.role = roleInput;
 
     try {
@@ -46,13 +46,13 @@ async function saveChanges(row, employee) {
         } else {
             alert("Failed to update employee: " + response.status);
             // Revert to original values
-            row.cells[1].innerHTML = employee.name;
+            row.cells[1].innerHTML = employee.username;
             row.cells[2].innerHTML = employee.role;
         }
     } catch (error) {
         alert("Error updating employee: " + error.message);
         // Revert to original values
-        row.cells[1].innerHTML = employee.name;
+        row.cells[1].innerHTML = employee.username;
         row.cells[2].innerHTML = employee.role;
     }
 }
