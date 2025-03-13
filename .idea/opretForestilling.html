@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/opretAnsatStyle.css">
+  <link rel="stylesheet" href="css/forestillinger.css">
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+    </ul>
+  </nav>
+</header>
+
+<h1>Ny forestilling registrering</h1>
+<div class="container">
+  <form action="http://localhost:8080/showing/newShowing" method="post" id="formForestilling">
+    <div class="form-group">
+      <label class="form-lab" for="dropdown">Film title</label>
+      <select name="movie_id" class="inputfield" id="dropdown" required>
+        <option value="" disabled selected>Vælg en film</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="screenNumber">sal nummer</label>
+      <input type="text" name="screen_id" class="inputfield" id="screenNumber" required>
+    </div>
+
+    <div class="form-group">
+      <label for="date">Dato</label>
+      <input type="date" name="date" class="inputfield" id="date" required>
+    </div>
+
+    <div class="form-group">
+      <label for="time">Tid</label>
+      <input type="time" name="start_time" class="inputfield" id="time" required>
+    </div>
+
+
+    <button type="submit" title="Gem">Opret</button>
+  </form>
+</div>
+
+<div>
+  <button onclick="window.location.href='showSide.html'" class="nav-button">Tilbage til forestillinger side</button>
+</div>
+
+<script src="js/opretForestilling.js"></script>
+</body>
+</html>

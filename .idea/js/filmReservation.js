@@ -90,7 +90,7 @@ function fetchAnyUrl(url){
 }
 
 let showings = []
-const url = "http://localhost:8080/showings";
+const url = "http://localhost:8080/showing/showings";
 
 async function getShowings(){
     try{
