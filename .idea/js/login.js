@@ -23,11 +23,24 @@ function handleLogin(event) {
                     alert("Login successful!");
                     console.log("Response data:", data);
 
+                    if (!data.role) {
+                        data.role = "USER";
+                    }
                     // Store the JSON data in localStorage
                     localStorage.setItem("customer", JSON.stringify(data));
                     console.log("Stored in localStorage:", localStorage.getItem("customer"));
+                    alert("Login successful!");
 
-                    window.location.href = "forside.html";
+                    // Redirect based on role
+                    if (data.role === "ADMIN") {
+                        window.location.href = "adminPage.html";
+                    } else if (data.role === "FILM_OPERATOR") {
+                        window.location.href = "showSide.html";
+                    } else {
+                        // Regular customer
+                        window.location.href = "forside.html";
+                    }
+
                 });
             } else {
                 alert("Fejl ved login, prøv igen.");

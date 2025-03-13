@@ -1,7 +1,5 @@
-//import function that returns show data
+const showInfo = JSON.parse(localStorage.getItem("showingItem"));
 
-// const showInfo = function that returns show data
-const showInfo = 2
 // map for all seats, the seats that are reserved and a set for those that will be selected
 let mapSeats = new Map();
 let mapReserved = new Map();
@@ -19,8 +17,7 @@ const seatInput = document.querySelector("#seatLimit")
 //Method to get the reservation, to find reserved seats.
 async function getReservedSeats(){
     try {
-        let showing1 = JSON.parse(localStorage.getItem("showingItem"));
-        const url = "http://localhost:8080/reservation/" + showing1.showingId;
+        const url = "http://localhost:8080/reservation/" + showInfo.showingId;
         const response = await fetch(url)
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -40,9 +37,7 @@ async function getReservedSeats(){
 
 async function loadAllSeats(){
     try {
-        let showing2 = JSON.parse(localStorage.getItem("showingItem"));
-        const url = "http://localhost:8080/reservation/seatsInShow/" + showing2.showingId;
-        console.log(showing2);
+        const url = "http://localhost:8080/reservation/seatsInShow/" + showInfo.showingId;
         const response = await fetch(url)
         console.log(response)
         if (!response.ok) {
@@ -61,7 +56,7 @@ async function loadAllSeats(){
 }
 
 function creatingSeats(){
-    const seatsPerRow = 16;
+    const seatsPerRow = showInfo.screenModel.seatsPerRow;
 
     let currentRow;
     let seatIndex = 0;
@@ -156,4 +151,3 @@ reserveButton.addEventListener("click", () => {
         console.log("Bestil")
     }
 })
-
