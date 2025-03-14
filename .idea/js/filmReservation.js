@@ -103,24 +103,27 @@ async function getShowings(){
 
 // Function to check if all seats are taken for a specific showing
 async function checkSeatAvailability(showing, showCell) {
-    const url = `http://localhost:8080/reservation/seatsInShow/${showing.showingId}`;
+    const url = `http://localhost:8080/reservation/${showing.showingId}`;
+    const url2 = `http://localhost:8080/reservation/seatsInShow/${showing.showingId}`;
     try {
-        let seats = await fetchAnyUrl(url) // fetches all seats based on showingId
+        let reservations = await fetchAnyUrl(url) // reserved seats from shoing id
+        console.log(reservations);
+
+        let seats = await fetchAnyUrl(url2) // fetches all seats based on showingId
         console.log(seats);
 
-        const allSeatsTaken = seats.every(seat => seat.reserved === true); // Check if all seats are occupied with every
-        const someSeatsTaken = seats.some(seat => seat.reserved === true);
+        const seatsReserved = reservations.length;
+        const totalSeats = seats.length;
 
-        if (allSeatsTaken) {
-            // If all seats are taken, make the cell red
-            showCell.style.backgroundColor = "red";
-        }else if(someSeatsTaken){
-            showCell.style.backgroundColor = "orange";
-        }else{
-            showCell.style.backgroundColor = "green";
+                if (seatsReserved === 0) {
+                    showCell.style.backgroundColor = "green";
+                } else if (seatsReserved === totalSeats) {
+                    showCell.style.backgroundColor = "red";
+                } else {
+                    showCell.style.backgroundColor = "orange";
+                }
+            } catch (error) {
+                console.error("Error fetching seat data:", error);
+            }
         }
-    } catch (error) {
-        console.error("Error fetching seat data:", error);
-    }
-}
 
