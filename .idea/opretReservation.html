@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/opretAnsatStyle.css">
+    <link rel="stylesheet" href="css/forestillinger.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+        </ul>
+    </nav>
+</header>
+
+<h1>Ny Reservation registrering</h1>
+<div class="container">
+    <form action="http://localhost:8080/reservation/create" method="post" id="formReservation">
+        <div class="form-group">
+            <label class="form-lab" for="dropdown">Forestillng</label>
+            <select name="showingId" class="inputfield" id="dropdown" required>
+                <option value="" disabled selected>Vælg en forestilling</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="seatLimit">Antal billeter</label>
+            <input type="number" id="seatLimit" min="1" max="10" value="4" class="inputfield">
+        </div>
+
+        <div class="form-group">
+            <label for="username">username</label>
+            <input type="text" name="username" class="inputfield" id="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">password</label>
+            <input type="text" name="password" class="inputfield" id="password" required>
+        </div>
+
+
+        <button type="submit" title="Gem">Opret</button>
+    </form>
+    <div id="seatContainer">
+
+    </div>
+</div>
+
+
+<div>
+    <button onclick="window.location.href='adminReservationPage.html'" class="nav-button">Tilbage til forestillinger side</button>
+</div>
+
+<script src="js/opretReservation.js"></script>
+</body>
+</html>

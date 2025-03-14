@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Velkommen til Kino</h1>
+</header>
+
+  <div class="right">
+    <article>
+      <h3>Log ind</h3>
+      <form id="loginForm" onsubmit="return handleLogin(event)">
+        <label for="username">Brugernavn:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Adgangskode:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Log ind</button>
+      </form>
+      <div>
+        <button onclick="window.location.href='opretKunde.html'" class="nav-button">Opret ny Kunde</button>
+      </div>
+    </article>
+  </div>
+</div>
+
+<script src="js/login.js"></script>
+</body>
+</html>
